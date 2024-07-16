@@ -1,0 +1,7 @@
+requests
+confluent-kafka
+mysql
+mysql-connector-python
+PyYAML
+pymysql
+datadog

@@ -1,0 +1,27 @@
+transformer:
+  add_timestamp: true
+
+sinks:
+  - type: json
+    file_path:
+      binance: './data/binance.json'
+      cryptocurrency: './data/cryptocurrency.json'
+      currency: './data/currency.json'
+  - type: mysql
+    mysql:
+      host: 'localhost'
+      user: 'root'
+      password: 'Sasi@007'
+      database: 'sqlsink'
+      table_name:
+        binance: 'binance'
+        cryptocurrency: 'cryptocurrency'
+        currency: 'currency'
+  - type: kafka
+    kafka:
+      bootstrap_servers: 'localhost:9092'
+      max.request.size: 10485760
+      topic:
+        binance: 'binance_topic'
+        cryptocurrency: 'cryptocurrency_topic'
+        currency: 'currency_topic'
